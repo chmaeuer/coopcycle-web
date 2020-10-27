@@ -94,7 +94,7 @@
 <div id="product-form-data"
   data-action-url="{{ oneup_uploader_endpoint('product') }}"
   data-product-id="{{ product.id }}"
-  data-product-image="{{ coopcycle_asset(product, 'imageFile', 'product_thumbnail') }}"></div>
+  data-product-image="{{ product.images|length > 0 ? coopcycle_asset(product.images.first(), 'imageFile', 'product_thumbnail') : '' }}"></div>
 
 {% endblock %}
 
